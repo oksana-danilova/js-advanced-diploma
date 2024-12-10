@@ -23,18 +23,51 @@
  * ```
  * */
 export function calcTileType(index, boardSize) {
-  // TODO: ваш код будет тут
-  return 'center';
+    // TODO: ваш код будет тут
+    let tileType = 'center';
+
+    if (Number.isInteger((boardSize * boardSize - index) / boardSize)) {
+        tileType = 'left';
+    }
+    if (Number.isInteger((boardSize * boardSize - index - 1) / boardSize)) {
+        tileType = 'right';
+    }
+    if (index === 0) {
+        tileType = 'top-left';
+    }
+    if (index > 0 && index < boardSize) {
+        tileType = 'top';
+    }
+    if (index === boardSize - 1) {
+        tileType = 'top-right';
+    }
+    if (index === boardSize * boardSize - boardSize) {
+        tileType = 'bottom-left';
+    }
+    if (index > boardSize * boardSize - boardSize) {
+        tileType = 'bottom';
+    }
+    if (index === boardSize * boardSize - 1) {
+        tileType = 'bottom-right';
+    }
+
+    return tileType;
 }
 
 export function calcHealthLevel(health) {
-  if (health < 15) {
-    return 'critical';
-  }
+    if (health < 15) {
+        return 'critical';
+    }
 
-  if (health < 50) {
-    return 'normal';
-  }
+    if (health < 50) {
+        return 'normal';
+    }
 
-  return 'high';
+    return 'high';
+}
+
+export function tooltipMessage({
+    level, attack, defence, health,
+}) {
+    return `🎖${level} ⚔${attack} 🛡${defence} ❤${health}`;
 }
