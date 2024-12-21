@@ -51,5 +51,8 @@
   },
   "dependencies": {
     "core-js": "^3.39.0"
-  }
+  },
+  "eslintIgnore": [
+    "node_modules/"
+  ]
 }

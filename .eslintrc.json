@@ -7,6 +7,10 @@
     },
     "extends": "airbnb-base",
     "overrides": [
+        {
+            "files": ["**/*.js"],
+            "excludedFiles": "node_modules/**"
+        }
     ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
