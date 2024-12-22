@@ -14,6 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: 'images/[hash][ext][query]',
     },
+    stats: { children: true, },
     module: {
         rules: [
             {
