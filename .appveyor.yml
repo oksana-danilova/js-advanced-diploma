@@ -1,4 +1,5 @@
-image: Ubuntu1804  # образ для сборки
+os: Ubuntu
+image: Ubuntu2004  # образ для сборки
 
 stack: node 22  # окружение
 
